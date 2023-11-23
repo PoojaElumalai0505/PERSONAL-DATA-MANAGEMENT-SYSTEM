@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Login Page</title>
+        <style>
+            body{
+                background-image: url('sourceimage/loginbg.webp');
+                background-repeat: no-repeat;
+                background-size:cover;
+                position: absolute;
+                top: 35%;
+                left: 80%;
+                transform: translate(-50%, -50%);
+            }
+            h1{
+                text-align:center;
+                color:rgb(34, 8, 114);
+                /* animation: pulse 2s ease-in-out infinite; */
+            }
+            label{
+                font-size:20px;
+                color:rgb(0, 10, 13);
+                font-weight: bolder;
+            }
+            input{
+                margin-top:10px;
+                margin-bottom:20px;
+                padding-left:10px;
+                width:250px;
+                height:30px;
+                outline-style: none;
+                font-size: 15px;
+            }
+            button{
+                padding:10px 20px;
+                background-color: rgb(34, 8, 114);
+                color:white;
+                font-size:15px;
+                font-weight: bolder;
+            }
+            button:hover{
+                background-color:aquamarine;
+                color:black;
+            }
+            form{
+                /* background-color:rgb(222, 218, 218); */
+                padding:25px 30px 40px;
+                border-radius:30px;
+                background: rgba(167, 192, 240, 0.2);
+                backdrop-filter: blur(10px);
+            }
+            .error-message {
+                color: red; 
+                font-size:15px;
+                margin-top:-15px;
+                margin-bottom:20px;
+            }
+            /* @keyframes pulse {
+                0%, 100% {
+                    transform: scale(1);
+                }
+                50% {
+                    transform: scale(1.1);
+                }
+            } */
+        </style>
+        <script>
+            function validation(){
+                var firstname=document.getElementById("fname").value;
+                var password=document.getElementById("pwd").value;
+                if(firstname == ""){
+                    document.getElementById('firstname-error').innerHTML = "** Enter your first name";
+                    return false;
+                }
+                else{document.getElementById('firstname-error').innerHTML = "";}
+                var fname=/^[a-zA-Z\-]+$/;
+                if(!firstname.match(fname)){
+                    document.getElementById('firstname-error').innerHTML = "** Enter alphapets only";
+                    return false;
+                }  
+
+                var r = /^(?=.*[.\-\@\$\*])(?=.*[a-zA-Z])(?=.*\d).{8,12}$/;
+                if(password == ""){
+                    document.getElementById('password-error').innerHTML = "** Enter your password";
+                    return false;
+                }
+                else{document.getElementById('password-error').innerHTML = "";}
+                if(!password.match(r)){
+                    document.getElementById('password-error').innerHTML = "** Password must be 8-12 characters,atleast one alphabet,atleast one number,atleast one special character (-,.,@,$)";
+                    return false;
+                }  
+                return true;
+            }
+        </script>
+    </head>
+    <body>
+        <form id="login-form" onsubmit="return validation()" action="login.php" method="post">
+            <h1>LOGIN FORM</h1>
+            <br>
+            <label>First Name</label><br>
+            <input type="text" name="firstname" id="fname" autocomplete="off" /><br>
+            <div class="error-message" id="firstname-error"></div>
+
+            <label>Password</label><br>
+            <input type="password" name="password" id="pwd" autocomplete="off" /><br>
+            <div class="error-message" id="password-error"></div>
+
+            <button >submit</button>
+            <div class="error">
+                <?php echo $error; ?>
+            </div>
+        </form>
+    </body>
+</html>

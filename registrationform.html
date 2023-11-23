@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+        <title>Registration Form</title>
+        <link rel="stylesheet" href="stylesheet.css">
+        <script src="main.js"></script>
+    </head>
+    <body>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-7 p-0">
+                    <div id="imageCarousel" class="carousel slide" data-ride="carousel" data-interval="3000">
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <img src="sourceimage/img1.jpg">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="sourceimage/img2.jpg">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="sourceimage/img3.jpg">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="sourceimage/img4.jpg">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="sourceimage/img5.jpg">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="sourceimage/img6.jpg">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="sourceimage/img7.jpg">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="sourceimage/img8.jpg">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-5" id="form">
+                    <div class="p-3">
+                        <div class="mb-3">
+                            <img src="sourceimage/logo1.jpeg" alt="Logo" width="150" height="40" id="logo">
+                        </div>
+                        <div class="mb-3 text-center">
+                            <h3>Registration Form</h3>
+                        </div>
+                        <form action="registrationform.php" onsubmit="return validation()" method="post">
+                            <div class="form-row">
+                                <div class="form-group col-md-6">
+                                    <label for="First Name">First Name</label>
+                                    <input type="text" class="form-control" name="firstname" id="firstname" placeholder="Enter your first name">
+                                    <div class="error-message" id="firstname-error"></div>
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <label for="Last Name">Last Name</label>
+                                    <input type="text" class="form-control" name="lastname" id="lastname" placeholder="Enter your last name">
+                                    <div class="error-message" id="lastname-error"></div>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group col-md-6">
+                                    <label for="dob">Date Of Birth</label>
+                                    <input type="date" class="form-control" name="dob" id="dob">
+                                    <div class="error-message" id="dob-error"></div>
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <label for="gender">Gender</label><br>
+                                    <select class="form-select input-width" id="gender" name="gender" style="color:grey;outline:grey;border:none;height:35px;margin-top:-20px;border-radius:3px">
+                                        <option value="0">Select gender</option>
+                                        <option value="Male">Male</option>
+                                        <option value="Female">Female</option>
+                                    </select>  
+                                    <div class="error-message" id="gender-error"></div>                                 
+                                </div>
+                                <!-- <div class="form-group col-md-6">
+                                    <label for="gender">Gender</label>
+                                    <input type="text" class="form-control" name="gender" id="gender" placeholder="Enter your gender">
+                                    <div class="error-message" id="gender-error"></div>
+                                </div> -->
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group col-md-6">
+                                    <label for="Fathers Name">Father's Name</label>
+                                    <input type="text" class="form-control" name="fathername" id="fathername" placeholder="Enter your father's name">
+                                    <div class="error-message" id="fathersname-error"></div>
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <label for="Mothers Name">Mother's Name</label>
+                                    <input type="text" class="form-control" name="mothername" id="mothername" placeholder="Enter your mother's name">
+                                    <div class="error-message" id="mothersname-error"></div>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group col-md-6">
+                                    <label for="Fathers Mobile Number">Father's Mobile Number</label>
+                                    <input type="text" class="form-control" name="fathermobilenumber"id="fathermobilenumber" placeholder="Enter your father's mobile no">
+                                    <div class="error-message" id="fathersmobilenumber-error"></div>
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <label for="Mothers Mobile Number">Mother's Mobile Number</label>
+                                    <input type="text" class="form-control" name="mothermobilenumber" id="mothermobilenumber" placeholder="Enter your mother's mobile no">
+                                    <div class="error-message" id="mothersmobilenumber-error"></div>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group col-md-6">
+                                    <label for="Address">Address</label>
+                                    <input type="text" class="form-control" name="address" id="address" placeholder="Enter your address">
+                                    <div class="error-message" id="address-error"></div>
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <label for="Password">Password</label>
+                                    <input type="password" class="form-control" name="password" id="password" placeholder="Enter your password">
+                                    <div class="error-message" id="password-error"></div>
+                                </div>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Register</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

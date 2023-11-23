@@ -1,0 +1,54 @@
+#form{
+    background-color:rgb(182, 245, 182);
+    height:100vh;
+    overflow-y: hidden;
+}
+.carousel-item img{
+    width:100%;
+    height:100vh;
+}
+label{
+    color:rgb(52, 19, 150);
+    font-weight:bolder;
+    margin-top:-70px;
+}
+h3{
+    color:rgb(110, 6, 58);
+    font-weight:bolder;
+    animation: colorChangeHeading 3s infinite alternate;
+}
+.btn-primary {
+    font-weight: bolder; 
+    text-align: center; 
+    display: block; 
+}
+@keyframes colorChangeHeading {
+    from {
+        color: rgb(110, 6, 58);
+    }
+    to {
+        color: rgb(48, 216, 36);
+    }
+}
+#logo {
+    animation: zoomInOut 1s infinite alternate;
+}
+@keyframes zoomInOut {
+    from {
+        transform: scale(1);
+    }
+    to {
+        transform: scale(1.2);
+    }
+}
+.input-width {
+    width: 100%;
+    height:50%;
+}
+.error-message {
+    color: red; 
+    font-size:15px;
+}
+.form-control{
+    margin-top:-10px;
+}
